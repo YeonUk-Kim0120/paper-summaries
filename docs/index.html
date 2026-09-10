@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>논문 정리</title>
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 8편.">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
+      --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--fg:#e6e8ec;--muted:#9aa3ad;--line:#262b33;
+      --accent:#7aa2ff;--accent-soft:#1a2240;--tagbg:#1e2340;--tagfg:#b4c0ff;--field:#12151b;--shadow:rgba(0,0,0,.5)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);line-height:1.55;
+     font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,-apple-system,sans-serif;word-break:keep-all}
+main{max-width:1060px;margin:0 auto;padding:44px 20px 90px}
+header.site h1{font-size:1.8rem;margin:0 0 6px}
+header.site .sub{color:var(--muted);font-size:.92rem;margin:0 0 26px}
+
+.controls{margin-bottom:22px}
+#q{width:100%;padding:11px 14px;font-size:.95rem;font-family:inherit;color:var(--fg);
+   background:var(--field);border:1px solid var(--line);border-radius:10px;outline:none}
+#q:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+#q::placeholder{color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:12px}
+.cats{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:.83rem;cursor:pointer;padding:5px 12px;border-radius:999px;
+      background:transparent;color:var(--muted);border:1px solid var(--line)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip .n{opacity:.65;font-size:.78em;margin-left:3px}
+.sortwrap{font-size:.83rem;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
+#sort{font:inherit;font-size:.83rem;color:var(--fg);background:var(--field);
+      border:1px solid var(--line);border-radius:8px;padding:5px 8px;cursor:pointer}
+.activetags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;font-size:.83rem;color:var(--muted)}
+.activetags .sel{background:var(--accent);color:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;border:none;font:inherit;font-size:.78rem}
+.activetags .sel::after{content:" ×";opacity:.8}
+.activetags .clear{background:none;border:none;color:var(--accent);cursor:pointer;font:inherit;font-size:.8rem;text-decoration:underline}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+      border-radius:12px;padding:18px;transition:transform .12s,box-shadow .12s,border-color .12s}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--shadow);border-color:var(--accent)}
+.card-main{display:block;color:inherit;text-decoration:none;flex:1}
+.card-title{font-weight:700;font-size:1.05rem;margin-bottom:4px}
+.card-orig{font-size:.85rem;color:var(--muted);font-style:italic}
+.card-meta{font-size:.8rem;color:var(--muted);margin:6px 0 8px}
+.card-desc{font-size:.9rem;margin:0 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font:inherit;font-size:.72rem;background:var(--tagbg);color:var(--tagfg);border:1px solid transparent;
+     border-radius:999px;padding:2px 9px;cursor:pointer}
+.tag:hover{border-color:var(--accent)}
+.tag.on{background:var(--accent);color:#fff}
+.empty{text-align:center;color:var(--muted);padding:50px 0;font-size:.95rem}
+footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+@media (max-width:560px){main{padding:28px 16px 60px}.row{align-items:flex-start}}
+</style></head>
+<body><main>
+
+<header class="site">
+  <h1>📚 논문 정리</h1>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 8편 · 마지막 업데이트 2026-09-08</p>
+</header>
+
+<div class="controls">
+  <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
+  <div class="row">
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">8</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">3</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <label class="sortwrap">정렬
+      <select id="sort">
+        <option value="date">정리 최신순</option>
+        <option value="year">논문 연도순</option>
+        <option value="title">제목순</option>
+      </select>
+    </label>
+  </div>
+  <div class="activetags" id="activetags" hidden></div>
+</div>
+
+<div class="grid" id="grid">
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6D pose tracking|multi-object|point tracker|occlusion recovery|TSDF|factor graph|model-free|RGB-D"
+             data-title="Point2Pose: 2D 점 추적기로 여러 미지 물체를 가림 너머까지 추적" data-year="2026"
+             data-date="2026-09-08" data-search="point2pose: 2d 점 추적기로 여러 미지 물체를 가림 너머까지 추적 point2pose: occlusion-recovering 6d pose tracking and 3d reconstruction for multiple unknown objects via 2d point trackers 장기 2d 점 추적기(bootstap)를 데이터 연관 엔진으로 써서, cad 모델 없이 여러 미지 물체의 6d 포즈를 rgb-d 영상에서 동시에 추적하고 tsdf로 복원한다. 완전 가림 후 재등장 시 별도 재위치추정 없이 즉시 복구되며, 새 벤치마크 ycbmultitrack-real 에서 add-s 89.43(bundlesdf 62.08, foundationpose 42.49)을 기록한다. arxiv 2026 6-dof 포즈 추적 6d pose tracking multi-object point tracker occlusion recovery tsdf factor graph model-free rgb-d">
+      <a class="card-main" href="point2pose.html">
+        <div class="card-title">Point2Pose: 2D 점 추적기로 여러 미지 물체를 가림 너머까지 추적</div>
+        <div class="card-orig">Point2Pose: Occlusion-Recovering 6D Pose Tracking and 3D Reconstruction for Multiple Unknown Objects via 2D Point Trackers</div>
+        <div class="card-meta">arXiv · 2026 · 정리 2026-09-08</div>
+        <p class="card-desc">장기 2D 점 추적기(BootsTAP)를 데이터 연관 엔진으로 써서, CAD 모델 없이 여러 미지 물체의 6D 포즈를 RGB-D 영상에서 동시에 추적하고 TSDF로 복원한다. 완전 가림 후 재등장 시 별도 재위치추정 없이 즉시 복구되며, 새 벤치마크 YCBMultiTrack-Real 에서 ADD-S 89.43(BundleSDF 62.08, FoundationPose 42.49)을 기록한다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6D pose tracking">6D pose tracking</button><button class="tag" data-tag="multi-object">multi-object</button><button class="tag" data-tag="point tracker">point tracker</button><button class="tag" data-tag="occlusion recovery">occlusion recovery</button><button class="tag" data-tag="TSDF">TSDF</button><button class="tag" data-tag="factor graph">factor graph</button><button class="tag" data-tag="model-free">model-free</button><button class="tag" data-tag="RGB-D">RGB-D</button></div>
+    </article>
+    <article class="card" data-cat="3DGS 압축·경량화" data-tags="3D Gaussian Splatting|압축|가지치기(pruning)|지식 증류|벡터 양자화|구면 조화 함수|실시간 렌더링"
+             data-title="LightGaussian: 3DGS 를 15배 압축하고 200+ FPS 로" data-year="2024"
+             data-date="2026-09-08" data-search="lightgaussian: 3dgs 를 15배 압축하고 200+ fps 로 lightgaussian: unbounded 3d gaussian compression with 15x reduction and 200+ fps 학습이 끝난 3d-gs 모델을 후처리로 경량화하는 파이프라인. 전역 중요도 점수로 가우시안을 66% 가지치기하고, sh 를 3차→2차로 증류하고, 중요도 하위 sh 만 벡터 양자화해서 mip-nerf 360 기준 782mb→45mb (약 15배), 144→237 fps 를 ssim 0.007 하락만으로 달성한다. neurips 2024 3dgs 압축·경량화 3d gaussian splatting 압축 가지치기(pruning) 지식 증류 벡터 양자화 구면 조화 함수 실시간 렌더링">
+      <a class="card-main" href="lightGaussian.html">
+        <div class="card-title">LightGaussian: 3DGS 를 15배 압축하고 200+ FPS 로</div>
+        <div class="card-orig">LightGaussian: Unbounded 3D Gaussian Compression with 15x Reduction and 200+ FPS</div>
+        <div class="card-meta">NeurIPS · 2024 · 정리 2026-09-08</div>
+        <p class="card-desc">학습이 끝난 3D-GS 모델을 후처리로 경량화하는 파이프라인. 전역 중요도 점수로 가우시안을 66% 가지치기하고, SH 를 3차→2차로 증류하고, 중요도 하위 SH 만 벡터 양자화해서 Mip-NeRF 360 기준 782MB→45MB (약 15배), 144→237 FPS 를 SSIM 0.007 하락만으로 달성한다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="압축">압축</button><button class="tag" data-tag="가지치기(pruning)">가지치기(pruning)</button><button class="tag" data-tag="지식 증류">지식 증류</button><button class="tag" data-tag="벡터 양자화">벡터 양자화</button><button class="tag" data-tag="구면 조화 함수">구면 조화 함수</button><button class="tag" data-tag="실시간 렌더링">실시간 렌더링</button></div>
+    </article>
+    <article class="card" data-cat="3DGS 압축·경량화" data-tags="3D Gaussian Splatting|압축|양자화|latent quantization|pruning|coarse-to-fine|novel view synthesis|메모리 효율"
+             data-title="EAGLES: 잠재 벡터 양자화로 3DGS 용량 15배 줄이기" data-year="2024"
+             data-date="2026-09-08" data-search="eagles: 잠재 벡터 양자화로 3dgs 용량 15배 줄이기 eagles: efficient accelerated 3d gaussians with lightweight encodings 3dgs 의 색(sh)·회전·불투명도를 정수 잠재 벡터 + 작은 mlp 디코더로 양자화하고, 저해상도→고해상도 점진 학습과 래스터화 기여도 기반 가지치기를 더해 저장 용량을 약 15배(745mb→54mb) 줄인다. psnr 손실은 3d-gs 대비 0.22~0.26db, 학습 시간과 fps 는 오히려 개선. eccv 2024 3dgs 압축·경량화 3d gaussian splatting 압축 양자화 latent quantization pruning coarse-to-fine novel view synthesis 메모리 효율">
+      <a class="card-main" href="eagles.html">
+        <div class="card-title">EAGLES: 잠재 벡터 양자화로 3DGS 용량 15배 줄이기</div>
+        <div class="card-orig">EAGLES: Efficient Accelerated 3D Gaussians with Lightweight EncodingS</div>
+        <div class="card-meta">ECCV · 2024 · 정리 2026-09-08</div>
+        <p class="card-desc">3DGS 의 색(SH)·회전·불투명도를 정수 잠재 벡터 + 작은 MLP 디코더로 양자화하고, 저해상도→고해상도 점진 학습과 래스터화 기여도 기반 가지치기를 더해 저장 용량을 약 15배(745MB→54MB) 줄인다. PSNR 손실은 3D-GS 대비 0.22~0.26dB, 학습 시간과 FPS 는 오히려 개선.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="압축">압축</button><button class="tag" data-tag="양자화">양자화</button><button class="tag" data-tag="latent quantization">latent quantization</button><button class="tag" data-tag="pruning">pruning</button><button class="tag" data-tag="coarse-to-fine">coarse-to-fine</button><button class="tag" data-tag="novel view synthesis">novel view synthesis</button><button class="tag" data-tag="메모리 효율">메모리 효율</button></div>
+    </article>
+    <article class="card" data-cat="3DGS 압축·경량화" data-tags="3D Gaussian Splatting|압축|벡터 양자화|코드북|quantization-aware training|엔트로피 부호화|하드웨어 래스터화|저사양 GPU"
+             data-title="Compressed 3DGS: 민감도 기반 벡터 양자화로 31× 압축" data-year="2024"
+             data-date="2026-09-08" data-search="compressed 3dgs: 민감도 기반 벡터 양자화로 31× 압축 compressed 3d gaussian splatting for accelerated novel view synthesis 학습이 끝난 3dgs 장면을 후처리로 압축한다. 파라미터별 민감도를 재서 sh 계수와 가우시안 형상을 코드북으로 벡터 양자화하고, 8비트 qat 미세조정 후 morton 정렬 + deflate 로 엔트로피 부호화해 최대 31× (실사 장면 평균 25.77×) 압축한다. 화질 손실은 눈에 띄지 않고, webgpu 하드웨어 래스터화 렌더러로 최대 4× 빠르게 렌더링된다. cvpr 2024 3dgs 압축·경량화 3d gaussian splatting 압축 벡터 양자화 코드북 quantization-aware training 엔트로피 부호화 하드웨어 래스터화 저사양 gpu">
+      <a class="card-main" href="compressedGS.html">
+        <div class="card-title">Compressed 3DGS: 민감도 기반 벡터 양자화로 31× 압축</div>
+        <div class="card-orig">Compressed 3D Gaussian Splatting for Accelerated Novel View Synthesis</div>
+        <div class="card-meta">CVPR · 2024 · 정리 2026-09-08</div>
+        <p class="card-desc">학습이 끝난 3DGS 장면을 후처리로 압축한다. 파라미터별 민감도를 재서 SH 계수와 가우시안 형상을 코드북으로 벡터 양자화하고, 8비트 QAT 미세조정 후 Morton 정렬 + DEFLATE 로 엔트로피 부호화해 최대 31× (실사 장면 평균 25.77×) 압축한다. 화질 손실은 눈에 띄지 않고, WebGPU 하드웨어 래스터화 렌더러로 최대 4× 빠르게 렌더링된다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="압축">압축</button><button class="tag" data-tag="벡터 양자화">벡터 양자화</button><button class="tag" data-tag="코드북">코드북</button><button class="tag" data-tag="quantization-aware training">quantization-aware training</button><button class="tag" data-tag="엔트로피 부호화">엔트로피 부호화</button><button class="tag" data-tag="하드웨어 래스터화">하드웨어 래스터화</button><button class="tag" data-tag="저사양 GPU">저사양 GPU</button></div>
+    </article>
+    <article class="card" data-cat="3DGS 압축·경량화" data-tags="3D Gaussian Splatting|압축|경량화|학습형 마스킹|잔차 벡터 양자화(R-VQ)|해시 그리드|Instant-NGP|신경 방사 필드"
+             data-title="Compact 3DGS: 가우시안 개수와 속성을 함께 줄이기" data-year="2024"
+             data-date="2026-09-08" data-search="compact 3dgs: 가우시안 개수와 속성을 함께 줄이기 compact 3d gaussian representation for radiance field 3dgs 를 (1) 볼륨 기반 학습형 마스킹으로 가우시안 개수를 줄이고 (2) sh 대신 해시 그리드 신경 필드로 색을 표현하고 (3) 스케일·회전을 r-vq 코드북으로 양자화해 압축한다. mip-nerf 360 에서 746 mb → 48.8 mb (후처리 시 29.1 mb), 렌더링은 오히려 더 빠르다. cvpr 2024 3dgs 압축·경량화 3d gaussian splatting 압축 경량화 학습형 마스킹 잔차 벡터 양자화(r-vq) 해시 그리드 instant-ngp 신경 방사 필드">
+      <a class="card-main" href="compact3DGaussian.html">
+        <div class="card-title">Compact 3DGS: 가우시안 개수와 속성을 함께 줄이기</div>
+        <div class="card-orig">Compact 3D Gaussian Representation for Radiance Field</div>
+        <div class="card-meta">CVPR · 2024 · 정리 2026-09-08</div>
+        <p class="card-desc">3DGS 를 (1) 볼륨 기반 학습형 마스킹으로 가우시안 개수를 줄이고 (2) SH 대신 해시 그리드 신경 필드로 색을 표현하고 (3) 스케일·회전을 R-VQ 코드북으로 양자화해 압축한다. Mip-NeRF 360 에서 746 MB → 48.8 MB (후처리 시 29.1 MB), 렌더링은 오히려 더 빠르다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="압축">압축</button><button class="tag" data-tag="경량화">경량화</button><button class="tag" data-tag="학습형 마스킹">학습형 마스킹</button><button class="tag" data-tag="잔차 벡터 양자화(R-VQ)">잔차 벡터 양자화(R-VQ)</button><button class="tag" data-tag="해시 그리드">해시 그리드</button><button class="tag" data-tag="Instant-NGP">Instant-NGP</button><button class="tag" data-tag="신경 방사 필드">신경 방사 필드</button></div>
+    </article>
+    <article class="card" data-cat="3DGS 압축·경량화" data-tags="3D Gaussian Splatting|memory reduction|pruning|spherical harmonics|codebook quantization|streaming|mobile"
+             data-title="3DGS 메모리 27배 줄이기: 프리미티브·SH·양자화 3단 압축" data-year="2024"
+             data-date="2026-09-08" data-search="3dgs 메모리 27배 줄이기: 프리미티브·sh·양자화 3단 압축 reducing the memory footprint of 3d gaussian splatting 3dgs 의 700mb~1.4gb 저장 용량을 세 축(프리미티브 개수, sh 밴드 수, 속성 정밀도)에서 동시에 줄여 평균 27배 압축한다. 해상도 인식 중복 프루닝 + 적응적 sh 밴드 할당 + k-means 코드북·half-float 양자화로 psnr 손실 0.21db, 렌더링은 오히려 1.7배 빨라진다. i3d 2024 (pacm cgit) 2024 3dgs 압축·경량화 3d gaussian splatting memory reduction pruning spherical harmonics codebook quantization streaming mobile">
+      <a class="card-main" href="reducing3DGS.html">
+        <div class="card-title">3DGS 메모리 27배 줄이기: 프리미티브·SH·양자화 3단 압축</div>
+        <div class="card-orig">Reducing the Memory Footprint of 3D Gaussian Splatting</div>
+        <div class="card-meta">I3D 2024 (PACM CGIT) · 2024 · 정리 2026-09-08</div>
+        <p class="card-desc">3DGS 의 700MB~1.4GB 저장 용량을 세 축(프리미티브 개수, SH 밴드 수, 속성 정밀도)에서 동시에 줄여 평균 27배 압축한다. 해상도 인식 중복 프루닝 + 적응적 SH 밴드 할당 + K-means 코드북·half-float 양자화로 PSNR 손실 0.21dB, 렌더링은 오히려 1.7배 빨라진다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="memory reduction">memory reduction</button><button class="tag" data-tag="pruning">pruning</button><button class="tag" data-tag="spherical harmonics">spherical harmonics</button><button class="tag" data-tag="codebook quantization">codebook quantization</button><button class="tag" data-tag="streaming">streaming</button><button class="tag" data-tag="mobile">mobile</button></div>
+    </article>
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6DoF pose tracking|3D Gaussian Splatting|RGB-only|unknown object|online reconstruction|DUSt3R|BundleSDF"
+             data-title="GSGTrack: 3DGS 기반 RGB 영상 6DoF 포즈 추적" data-year="2024"
+             data-date="2026-08-27" data-search="gsgtrack: 3dgs 기반 rgb 영상 6dof 포즈 추적 gsgtrack: gaussian splatting-guided object pose tracking from rgb videos 깊이 없이 단안 rgb 영상만으로 미지 물체의 6dof 포즈를 추적하며 동시에 3dgs로 물체를 재구성. dust3r 의 부정확한 기하 사전정보를 그래프 기반 기하 최적화·이미지 쌍 가지치기·실루엣 손실로 보정해, ho3d 에서 add-s 64.60% (gs-slam 20.89%) 를 달성. arxiv (2412.02267) 2024 6-dof 포즈 추적 6dof pose tracking 3d gaussian splatting rgb-only unknown object online reconstruction dust3r bundlesdf">
+      <a class="card-main" href="GSGTrack.html">
+        <div class="card-title">GSGTrack: 3DGS 기반 RGB 영상 6DoF 포즈 추적</div>
+        <div class="card-orig">GSGTrack: Gaussian Splatting-Guided Object Pose Tracking from RGB Videos</div>
+        <div class="card-meta">arXiv (2412.02267) · 2024 · 정리 2026-08-27</div>
+        <p class="card-desc">깊이 없이 단안 RGB 영상만으로 미지 물체의 6DoF 포즈를 추적하며 동시에 3DGS로 물체를 재구성. DUSt3R 의 부정확한 기하 사전정보를 그래프 기반 기하 최적화·이미지 쌍 가지치기·실루엣 손실로 보정해, HO3D 에서 ADD-S 64.60% (GS-SLAM 20.89%) 를 달성.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6DoF pose tracking">6DoF pose tracking</button><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="RGB-only">RGB-only</button><button class="tag" data-tag="unknown object">unknown object</button><button class="tag" data-tag="online reconstruction">online reconstruction</button><button class="tag" data-tag="DUSt3R">DUSt3R</button><button class="tag" data-tag="BundleSDF">BundleSDF</button></div>
+    </article>
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6-DoF pose tracking|3D reconstruction|neural SDF|pose graph|RGBD|model-free|object-level SLAM"
+             data-title="BundleSDF: 미지 물체의 6-DoF 추적과 신경 3D 복원" data-year="2023"
+             data-date="2026-08-27" data-search="bundlesdf: 미지 물체의 6-dof 추적과 신경 3d 복원 bundlesdf: neural 6-dof tracking and 3d reconstruction of unknown objects 첫 프레임 마스크만 주어진 단안 rgbd 영상에서, 온라인 포즈 그래프 최적화와 병렬로 학습되는 neural object field(신경 sdf)를 메모리 풀로 연결해 미지 물체의 6-dof 포즈를 약 10hz로 추적하면서 형상·텍스처까지 복원한다. ho3d/ycbineoat/behave에서 기존 방법을 큰 차이로 앞선다. cvpr 2023 6-dof 포즈 추적 6-dof pose tracking 3d reconstruction neural sdf pose graph rgbd model-free object-level slam">
+      <a class="card-main" href="bundleSDF.html">
+        <div class="card-title">BundleSDF: 미지 물체의 6-DoF 추적과 신경 3D 복원</div>
+        <div class="card-orig">BundleSDF: Neural 6-DoF Tracking and 3D Reconstruction of Unknown Objects</div>
+        <div class="card-meta">CVPR · 2023 · 정리 2026-08-27</div>
+        <p class="card-desc">첫 프레임 마스크만 주어진 단안 RGBD 영상에서, 온라인 포즈 그래프 최적화와 병렬로 학습되는 Neural Object Field(신경 SDF)를 메모리 풀로 연결해 미지 물체의 6-DoF 포즈를 약 10Hz로 추적하면서 형상·텍스처까지 복원한다. HO3D/YCBInEOAT/BEHAVE에서 기존 방법을 큰 차이로 앞선다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6-DoF pose tracking">6-DoF pose tracking</button><button class="tag" data-tag="3D reconstruction">3D reconstruction</button><button class="tag" data-tag="neural SDF">neural SDF</button><button class="tag" data-tag="pose graph">pose graph</button><button class="tag" data-tag="RGBD">RGBD</button><button class="tag" data-tag="model-free">model-free</button><button class="tag" data-tag="object-level SLAM">object-level SLAM</button></div>
+    </article>
+</div>
+<p class="empty" id="empty" hidden>조건에 맞는 논문이 없어요.</p>
+
+<footer class="site">
+  papers/ 폴더에 PDF를 넣고 "논문 정리해줘" 라고 하면 여기에 추가돼요.
+</footer>
+
+</main>
+<script>
+(function(){
+  var grid=document.getElementById('grid'), q=document.getElementById('q'),
+      sort=document.getElementById('sort'), empty=document.getElementById('empty'),
+      box=document.getElementById('activetags'), cards=[].slice.call(grid.children),
+      cat='', tags=[];
+
+  function norm(s){return (s||'').toLowerCase();}
+
+  function apply(){
+    var terms=norm(q.value).split(/\s+/).filter(Boolean), shown=0;
+    cards.forEach(function(c){
+      var ok = (!cat || c.dataset.cat===cat)
+        && tags.every(function(t){return c.dataset.tags.split('|').indexOf(t)>=0;})
+        && terms.every(function(t){return c.dataset.search.indexOf(t)>=0;});
+      c.hidden=!ok; if(ok) shown++;
+    });
+    empty.hidden = shown>0;
+    grid.querySelectorAll('.tag').forEach(function(b){
+      b.classList.toggle('on', tags.indexOf(b.dataset.tag)>=0);
+    });
+    box.hidden = tags.length===0;
+    box.innerHTML='';
+    if(tags.length){
+      box.appendChild(document.createTextNode('태그 '));
+      tags.forEach(function(t){
+        var b=document.createElement('button'); b.className='sel'; b.textContent=t;
+        b.onclick=function(){tags=tags.filter(function(x){return x!==t;});apply();};
+        box.appendChild(b);
+      });
+      var c=document.createElement('button'); c.className='clear'; c.textContent='전체 해제';
+      c.onclick=function(){tags=[];apply();}; box.appendChild(c);
+    }
+  }
+
+  function resort(){
+    var k=sort.value;
+    cards.slice().sort(function(a,b){
+      if(k==='title') return a.dataset.title.localeCompare(b.dataset.title,'ko');
+      if(k==='year')  return (b.dataset.year||'').localeCompare(a.dataset.year||'')
+                          || a.dataset.title.localeCompare(b.dataset.title,'ko');
+      return (b.dataset.date||'').localeCompare(a.dataset.date||'')
+          || a.dataset.title.localeCompare(b.dataset.title,'ko');
+    }).forEach(function(c){grid.appendChild(c);});
+  }
+
+  q.addEventListener('input', apply);
+  sort.addEventListener('change', resort);
+  document.getElementById('cats').addEventListener('click', function(e){
+    var b=e.target.closest('.chip'); if(!b) return;
+    cat=b.dataset.cat;
+    [].forEach.call(this.querySelectorAll('.chip'),function(x){x.classList.toggle('on',x===b);});
+    apply();
+  });
+  grid.addEventListener('click', function(e){
+    var b=e.target.closest('.tag'); if(!b) return;
+    var t=b.dataset.tag, i=tags.indexOf(t);
+    if(i>=0) tags.splice(i,1); else tags.push(t);
+    apply();
+  });
+  apply();
+})();
+</script>
+</body></html>

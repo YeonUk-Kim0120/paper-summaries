@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===== 메타데이터: index.html 카드에 쓰임. 반드시 채울 것 ===== -->
+<title>{{한국어 제목 (짧게)}}</title>
+<meta name="paper:original-title" content="{{원제}}">
+<meta name="paper:venue" content="{{학회/저널, 예: CVPR}}">
+<meta name="paper:year" content="{{연도}}">
+<meta name="paper:tags" content="{{태그1, 태그2, 태그3}}">
+<meta name="description" content="{{한 줄 요약 (1~2문장)}}">
+<!-- 수식: $...$ 또는 $$...$$ (KaTeX, 온라인일 때만 렌더링) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<style>
+:root{
+  --bg:#fbfbf9;--fg:#1f2328;--muted:#6b7280;--line:#e5e7eb;--card:#ffffff;
+  --accent:#2563eb;--accent-soft:#eaf0ff;--ok:#059669;--ok-soft:#e7f7f0;--warn:#b45309;--warn-soft:#fff4e5;
+  --code:#f3f4f6;--tagbg:#eef2ff;--tagfg:#3730a3;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f1115;--fg:#e6e8ec;--muted:#9aa3ad;--line:#262b33;--card:#171a21;
+  --accent:#7aa2ff;--accent-soft:#1a2240;--ok:#34d399;--ok-soft:#10261e;--warn:#fbbf24;--warn-soft:#2b2210;
+  --code:#1e222b;--tagbg:#1e2340;--tagfg:#b4c0ff;
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,-apple-system,sans-serif;line-height:1.75;font-size:16px;word-break:keep-all}
+.layout{display:grid;grid-template-columns:230px minmax(0,860px);gap:40px;max-width:1180px;margin:0 auto;padding:36px 24px 100px}
+@media (max-width:960px){.layout{grid-template-columns:minmax(0,1fr)}nav.toc{display:none}}
+nav.toc{position:sticky;top:24px;align-self:start;font-size:.86rem;border-right:1px solid var(--line);padding-right:16px}
+nav.toc .toc-title{font-weight:700;color:var(--muted);font-size:.75rem;letter-spacing:.06em;margin-bottom:8px}
+nav.toc a{display:block;color:var(--muted);text-decoration:none;padding:3px 0}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a.sub{padding-left:12px;font-size:.8rem}
+nav.toc .back{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+header.paper h1{font-size:1.75rem;line-height:1.3;margin:0 0 6px}
+header.paper .orig{font-size:1rem;color:var(--muted);font-style:italic;margin-bottom:12px}
+header.paper .meta{font-size:.9rem;color:var(--muted)}
+header.paper .meta a{color:var(--accent)}
+.tags{margin:10px 0 0}
+.tag{display:inline-block;font-size:.75rem;background:var(--tagbg);color:var(--tagfg);border-radius:999px;padding:2px 10px;margin:0 6px 6px 0}
+h2{font-size:1.35rem;margin:52px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+h3{font-size:1.08rem;margin:30px 0 8px}
+p{margin:0 0 14px}
+ul,ol{padding-left:22px}li{margin:4px 0}
+a{color:var(--accent)}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:14px;border-radius:8px;overflow-x:auto;font-size:.85rem}
+.tldr{background:var(--accent-soft);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0}
+.tldr .label{font-weight:700;color:var(--accent);font-size:.8rem;letter-spacing:.05em;margin-bottom:4px}
+.tldr p:last-child{margin-bottom:0}
+.callout{border-left:4px solid var(--ok);background:var(--ok-soft);padding:12px 18px;border-radius:0 10px 10px 0;margin:18px 0}
+.callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+.callout .label{font-weight:700;font-size:.8rem;margin-bottom:2px}
+.callout p:last-child{margin-bottom:0}
+.kp{display:grid;gap:10px;margin:14px 0}
+.kp .item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.kp .item b{color:var(--accent)}
+figure{margin:24px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+figure img{display:block;max-width:100%;height:auto;margin:0 auto;border-radius:6px}
+figure.dark-bg img{background:#fff;padding:6px}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:10px;line-height:1.6}
+figcaption b{color:var(--fg)}
+.fig-note{font-size:.86rem;background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin-top:10px;color:var(--fg)}
+.table-wrap{overflow-x:auto;margin:18px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:var(--card)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center}
+th{background:var(--code);font-weight:700}
+td:first-child,th:first-child{text-align:left}
+td.best{font-weight:700;color:var(--ok)}
+tr.ours td{background:var(--accent-soft);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:700px){.two{grid-template-columns:1fr}}
+dl.glossary{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:.92rem}
+dl.glossary dt{font-weight:700;color:var(--accent)}
+dl.glossary dd{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+@media print{nav.toc{display:none}.layout{grid-template-columns:1fr;padding:0}figure{break-inside:avoid}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ===== 목차: 섹션 id와 맞출 것 ===== -->
+<nav class="toc">
+  <div class="toc-title">목차</div>
+  <a href="#tldr">한 줄 요약</a>
+  <a href="#background">배경과 문제</a>
+  <a href="#method">방법</a>
+  <a href="#experiments">실험과 결과</a>
+  <a href="#limitations">한계와 논의</a>
+  <a href="#takeaways">정리와 시사점</a>
+  <a href="#glossary">용어 정리</a>
+  <div class="back"><a href="index.html">← 목록으로</a></div>
+</nav>
+
+<main>
+<header class="paper">
+  <h1>{{한국어 제목}}</h1>
+  <div class="orig">{{원제 (영문)}}</div>
+  <div class="meta">
+    {{저자 (소속)}} · {{학회 연도}} ·
+    <a href="{{arXiv/프로젝트 링크}}">arXiv</a> · <a href="{{코드 링크}}">Code</a>
+  </div>
+  <div class="tags"><span class="tag">{{태그}}</span></div>
+</header>
+
+<section id="tldr">
+  <div class="tldr">
+    <div class="label">TL;DR</div>
+    <p>{{이 논문이 무엇을, 왜, 어떻게 했고 결과가 어땠는지 2~3문장}}</p>
+  </div>
+  <h3>핵심 기여</h3>
+  <div class="kp">
+    <div class="item"><b>1.</b> {{기여 1}}</div>
+    <div class="item"><b>2.</b> {{기여 2}}</div>
+    <div class="item"><b>3.</b> {{기여 3}}</div>
+  </div>
+  <!-- 티저 그림(Figure 1)이 있으면 여기에 -->
+  <figure>
+    <img src="figures/fig-1.png" alt="Figure 1">
+    <figcaption><b>Figure 1.</b> {{캡션 한국어 번역}}</figcaption>
+  </figure>
+</section>
+
+<section id="background">
+  <h2>1. 배경과 문제 정의</h2>
+  <p>{{어떤 문제인지, 기존 방법의 한계, 이 논문의 동기}}</p>
+</section>
+
+<section id="method">
+  <h2>2. 방법</h2>
+  <figure>
+    <img src="figures/fig-2.png" alt="Figure 2">
+    <figcaption><b>Figure 2.</b> {{캡션 번역}}</figcaption>
+    <div class="fig-note">💡 {{그림을 읽는 법 / 주목할 점 — 필요할 때만}}</div>
+  </figure>
+  <h3>2.1 {{구성요소}}</h3>
+  <p>{{설명. 수식은 $L = \sum_i \| x_i \|$ 처럼}}</p>
+  <div class="callout"><div class="label">왜 이렇게 했나</div><p>{{설계 의도}}</p></div>
+</section>
+
+<section id="experiments">
+  <h2>3. 실험과 결과</h2>
+  <h3>3.1 실험 설정</h3>
+  <p>{{데이터셋, 지표, 베이스라인}}</p>
+  <h3>3.2 주요 결과</h3>
+  <!-- 핵심 표는 원본 이미지 + (중요하면) 한국어 HTML 표로 재구성 -->
+  <figure>
+    <img src="figures/table-1.png" alt="Table 1">
+    <figcaption><b>Table 1.</b> {{캡션 번역}}</figcaption>
+  </figure>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>방법</th><th>지표 A ↑</th><th>지표 B ↓</th></tr></thead>
+      <tbody>
+        <tr><td>Baseline</td><td>0.0</td><td>0.0</td></tr>
+        <tr class="ours"><td>제안 방법</td><td class="best">0.0</td><td class="best">0.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>3.3 Ablation</h3>
+  <p>{{무엇을 빼면 얼마나 떨어지는지 → 각 요소의 역할}}</p>
+</section>
+
+<section id="limitations">
+  <h2>4. 한계와 논의</h2>
+  <ul><li>{{논문이 밝힌 한계}}</li><li>{{읽으면서 느낀 한계/의문}}</li></ul>
+</section>
+
+<section id="takeaways">
+  <h2>5. 정리와 시사점</h2>
+  <div class="callout"><div class="label">한 문장으로</div><p>{{...}}</p></div>
+  <ul><li>{{내 연구/프로젝트에 적용할 점}}</li><li>{{관련해서 볼 논문}}</li></ul>
+</section>
+
+<section id="glossary">
+  <h2>용어 정리</h2>
+  <dl class="glossary">
+    <dt>{{용어 (영문)}}</dt><dd>{{짧은 설명}}</dd>
+  </dl>
+</section>
+
+<p class="muted small" style="margin-top:60px">원본: <code>papers/{{파일명}}.pdf</code> · 이 정리는 Claude가 논문을 읽고 한국어로 요약한 것이며, 정확한 내용은 원문을 확인하세요.</p>
+</main>
+</div>
+</body>
+</html>

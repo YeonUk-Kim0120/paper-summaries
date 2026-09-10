@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논문 정리</title>
-<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 8편.">
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 9편.">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
       --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
@@ -56,13 +56,13 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 
 <header class="site">
   <h1>📚 논문 정리</h1>
-  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 8편 · 마지막 업데이트 2026-09-08</p>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 9편 · 마지막 업데이트 2026-09-10</p>
 </header>
 
 <div class="controls">
   <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
   <div class="row">
-    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">8</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">3</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">9</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">4</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
     <label class="sortwrap">정렬
       <select id="sort">
         <option value="date">정리 최신순</option>
@@ -75,6 +75,17 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 </div>
 
 <div class="grid" id="grid">
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6-DoF 포즈 추적|참조 조건부 분할|재위치추정|추적 실패 검출|annotation-free|DINOv3|FoundationPose|SAM3D"
+             data-title="STORM: 참조 이미지 한 장으로 분할·추적·재위치추정" data-year="2026"
+             data-date="2026-09-10" data-search="storm: 참조 이미지 한 장으로 분할·추적·재위치추정 storm: segment, track, and object re-localization from a single image 참조 이미지 한 장만으로 미지 물체의 마스크·3d 모델·6d 포즈를 얻고, 학습된 호환성 검증기(tom)가 추적 실패를 스스로 감지해 재위치추정을 트리거하는 annotation-free 프레임워크. icml 2026 (arxiv 2511.09771) 2026 6-dof 포즈 추적 6-dof 포즈 추적 참조 조건부 분할 재위치추정 추적 실패 검출 annotation-free dinov3 foundationpose sam3d">
+      <a class="card-main" href="storm.html">
+        <div class="card-title">STORM: 참조 이미지 한 장으로 분할·추적·재위치추정</div>
+        <div class="card-orig">STORM: Segment, Track, and Object Re-Localization from a Single Image</div>
+        <div class="card-meta">ICML 2026 (arXiv 2511.09771) · 2026 · 정리 2026-09-10</div>
+        <p class="card-desc">참조 이미지 한 장만으로 미지 물체의 마스크·3D 모델·6D 포즈를 얻고, 학습된 호환성 검증기(TOM)가 추적 실패를 스스로 감지해 재위치추정을 트리거하는 annotation-free 프레임워크.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6-DoF 포즈 추적">6-DoF 포즈 추적</button><button class="tag" data-tag="참조 조건부 분할">참조 조건부 분할</button><button class="tag" data-tag="재위치추정">재위치추정</button><button class="tag" data-tag="추적 실패 검출">추적 실패 검출</button><button class="tag" data-tag="annotation-free">annotation-free</button><button class="tag" data-tag="DINOv3">DINOv3</button><button class="tag" data-tag="FoundationPose">FoundationPose</button><button class="tag" data-tag="SAM3D">SAM3D</button></div>
+    </article>
     <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6D pose tracking|multi-object|point tracker|occlusion recovery|TSDF|factor graph|model-free|RGB-D"
              data-title="Point2Pose: 2D 점 추적기로 여러 미지 물체를 가림 너머까지 추적" data-year="2026"
              data-date="2026-09-08" data-search="point2pose: 2d 점 추적기로 여러 미지 물체를 가림 너머까지 추적 point2pose: occlusion-recovering 6d pose tracking and 3d reconstruction for multiple unknown objects via 2d point trackers 장기 2d 점 추적기(bootstap)를 데이터 연관 엔진으로 써서, cad 모델 없이 여러 미지 물체의 6d 포즈를 rgb-d 영상에서 동시에 추적하고 tsdf로 복원한다. 완전 가림 후 재등장 시 별도 재위치추정 없이 즉시 복구되며, 새 벤치마크 ycbmultitrack-real 에서 add-s 89.43(bundlesdf 62.08, foundationpose 42.49)을 기록한다. arxiv 2026 6-dof 포즈 추적 6d pose tracking multi-object point tracker occlusion recovery tsdf factor graph model-free rgb-d">

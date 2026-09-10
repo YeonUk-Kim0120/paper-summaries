@@ -8,12 +8,25 @@
 | 항목 | 상태 |
 |---|---|
 | GitHub 저장소 · Pages | ✅ 설정 완료 |
-| VS Code 에서 push | ✅ 됨 (`Ctrl+Shift+P` → `Git: Push`) |
-| 터미널/자동화에서 push | ❌ **안 됨** — 자격증명이 VS Code 안에만 있음 |
+| VS Code 에서 push | ✅ 됨 — `Ctrl+Shift+P` → `Git: Push`, 또는 **VS Code 통합 터미널**에서 `git push` |
+| 그 밖의 셸에서 push | ❌ 안 됨 — Claude 의 셸, 별도로 띄운 터미널 등 |
 | SSH 키 (`~/.ssh/id_ed25519`) | 생성만 해둠. GitHub 에 **등록 안 함** |
 
-즉 지금은 **정리를 만든 뒤 VS Code 에서 Push 를 직접 눌러야** 사이트에 반영된다.
-그게 귀찮아지면 아래 절차로 키를 등록하면 push 까지 자동으로 끝난다.
+### 왜 VS Code 안에서만 되나
+
+VS Code 는 `GIT_ASKPASS` 환경변수를 `/usr/share/code/resources/app/extensions/git/dist/askpass.sh`
+로 걸어서 git 의 인증 요청을 자기 계정 정보로 처리한다. 그런데 이 변수는 **VS Code 가 띄운
+프로세스에만** 들어간다. 그래서 VS Code 통합 터미널은 되고, 그 밖에서 뜬 셸(=Claude 가 쓰는 셸)은 안 된다.
+
+통합 터미널인지 확인하려면:
+
+```bash
+echo $GIT_ASKPASS
+# .../extensions/git/dist/askpass.sh 가 나오면 push 가 된다. 비어 있으면 안 된다.
+```
+
+즉 지금은 **정리를 만든 뒤 VS Code 안에서 push 를 직접 해야** 사이트에 반영된다.
+그게 귀찮아지면 아래 절차로 키를 등록하면 Claude 가 push 까지 끝낸다.
 
 ---
 

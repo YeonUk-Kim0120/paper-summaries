@@ -26,9 +26,15 @@
 `docs/` 는 GitHub Pages 로 공개된다 → **https://yeonuk-kim0120.github.io/paper-summaries/**
 정리를 만든 뒤 `git push` 하면 1~2분 안에 사이트에 반영된다 (remote: `Yeonuk-Kim0120/paper-summaries`, 브랜치 `main`, Pages 소스 `/docs`).
 
-**주의: 터미널에서 `git push` 는 인증이 없어 실패한다.** 자격증명이 VS Code 안에만 있다.
-커밋까지만 하고 사용자에게 "VS Code 에서 `Ctrl+Shift+P` → `Git: Push`" 를 안내할 것.
-push 까지 자동화하려면 SSH 키 등록이 필요하고, 절차는 [`SETUP.md`](SETUP.md) 에 정리돼 있다.
+**주의: Claude 가 쓰는 셸에서는 `git push` 가 실패한다** (`could not read Username`).
+자격증명이 VS Code 의 askpass 를 거치는데, VS Code 는 **자기가 띄운 통합 터미널에만**
+`GIT_ASKPASS` 를 주입하기 때문이다. Claude 의 셸은 그 밖에서 뜬다.
+
+따라서 커밋까지만 하고, 사용자에게 둘 중 하나를 안내할 것:
+- VS Code **통합 터미널**에서 `git push`
+- 또는 `Ctrl+Shift+P` → `Git: Push`
+
+Claude 가 push 까지 하려면 SSH 키 등록이 필요하다. 절차는 [`SETUP.md`](SETUP.md).
 
 ## 규칙
 - 정리는 한국어. 용어는 한국어(영문) 병기. 숫자는 원문 그대로.

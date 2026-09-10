@@ -29,6 +29,8 @@ python3 tools/build_html.py <slug>               # → docs/<slug>.html + docs/i
 정리 본문은 Claude Code 로 씁니다. `papers/` 에 PDF 를 넣고 "논문 정리해줘" 라고 하면
 [`.claude/skills/summarize-papers/SKILL.md`](.claude/skills/summarize-papers/SKILL.md) 절차대로 진행됩니다.
 
+배포·인증 설정은 [`SETUP.md`](SETUP.md) 참고.
+
 ## 정리 원칙
 
 - 직역이 아니라 **이해한 내용을 한국어로 설명**하는 글. 전문 용어는 한국어(영문) 병기.

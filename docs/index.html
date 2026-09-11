@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논문 정리</title>
-<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 9편.">
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 10편.">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
       --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
@@ -56,13 +56,13 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 
 <header class="site">
   <h1>📚 논문 정리</h1>
-  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 9편 · 마지막 업데이트 2026-09-10</p>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 10편 · 마지막 업데이트 2026-09-11</p>
 </header>
 
 <div class="controls">
   <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
   <div class="row">
-    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">9</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">4</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">10</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">1</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">4</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
     <label class="sortwrap">정렬
       <select id="sort">
         <option value="date">정리 최신순</option>
@@ -75,6 +75,17 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 </div>
 
 <div class="grid" id="grid">
+    <article class="card" data-cat="장면 표현·재구성" data-tags="2D Gaussian Splatting|표면 재구성|래디언스 필드|ray-splat intersection|정규화|TSDF 메싱|3DGS"
+             data-title="2DGS: 가우시안을 납작하게 눌러 표면을 맞추기" data-year="2024"
+             data-date="2026-09-11" data-search="2dgs: 가우시안을 납작하게 눌러 표면을 맞추기 2d gaussian splatting for geometrically accurate radiance fields 3d 가우시안을 방향을 가진 2d 원반(oriented disk)으로 납작하게 눌러, 시점이 바뀌어도 값이 변하지 않는 perspective-correct 래스터화(ray-splat intersection)를 구현한다. 여기에 depth distortion·normal consistency 정규화를 더해 dtu 챔퍼 거리 0.80 (3dgs 1.96, sugar 1.33, neus 0.84) 을 10.9분 만에 달성하고, sdf 기반 방법 대비 약 100배 빠르게 깨끗한 메시를 뽑는다. siggraph 2024 2024 장면 표현·재구성 2d gaussian splatting 표면 재구성 래디언스 필드 ray-splat intersection 정규화 tsdf 메싱 3dgs">
+      <a class="card-main" href="2dgs.html">
+        <div class="card-title">2DGS: 가우시안을 납작하게 눌러 표면을 맞추기</div>
+        <div class="card-orig">2D Gaussian Splatting for Geometrically Accurate Radiance Fields</div>
+        <div class="card-meta">SIGGRAPH 2024 · 2024 · 정리 2026-09-11</div>
+        <p class="card-desc">3D 가우시안을 방향을 가진 2D 원반(oriented disk)으로 납작하게 눌러, 시점이 바뀌어도 값이 변하지 않는 perspective-correct 래스터화(ray-splat intersection)를 구현한다. 여기에 depth distortion·normal consistency 정규화를 더해 DTU 챔퍼 거리 0.80 (3DGS 1.96, SuGaR 1.33, NeuS 0.84) 을 10.9분 만에 달성하고, SDF 기반 방법 대비 약 100배 빠르게 깨끗한 메시를 뽑는다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="2D Gaussian Splatting">2D Gaussian Splatting</button><button class="tag" data-tag="표면 재구성">표면 재구성</button><button class="tag" data-tag="래디언스 필드">래디언스 필드</button><button class="tag" data-tag="ray-splat intersection">ray-splat intersection</button><button class="tag" data-tag="정규화">정규화</button><button class="tag" data-tag="TSDF 메싱">TSDF 메싱</button><button class="tag" data-tag="3DGS">3DGS</button></div>
+    </article>
     <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6-DoF 포즈 추적|참조 조건부 분할|재위치추정|추적 실패 검출|annotation-free|DINOv3|FoundationPose|SAM3D"
              data-title="STORM: 참조 이미지 한 장으로 분할·추적·재위치추정" data-year="2026"
              data-date="2026-09-10" data-search="storm: 참조 이미지 한 장으로 분할·추적·재위치추정 storm: segment, track, and object re-localization from a single image 참조 이미지 한 장만으로 미지 물체의 마스크·3d 모델·6d 포즈를 얻고, 학습된 호환성 검증기(tom)가 추적 실패를 스스로 감지해 재위치추정을 트리거하는 annotation-free 프레임워크. icml 2026 (arxiv 2511.09771) 2026 6-dof 포즈 추적 6-dof 포즈 추적 참조 조건부 분할 재위치추정 추적 실패 검출 annotation-free dinov3 foundationpose sam3d">

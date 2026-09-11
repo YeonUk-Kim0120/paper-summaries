@@ -81,9 +81,13 @@ def meta_of(html_text: str):
 
 # 분야 자동 분류. summary.html 에 <meta name="paper:category"> 가 있으면 그걸 우선 쓰고,
 # 없으면 태그에서 아래 키워드로 추론한다. 위에 있는 규칙이 먼저 걸린다.
+# 위에서부터 순서대로 검사해 처음 걸리는 규칙을 쓴다. 좁은 규칙을 위에 둘 것
+# (예: 압축 논문도 "3D Gaussian Splatting" 태그를 갖고 있으므로, 넓은 "장면 표현·재구성"은 맨 아래).
 CATEGORY_RULES = [
     ("6-DoF 포즈 추적", ("6dof pose", "6-dof pose", "6d pose", "pose tracking", "포즈 추적")),
     ("3DGS 압축·경량화", ("압축", "경량화", "memory reduction", "양자화", "quantization", "pruning", "가지치기")),
+    ("장면 표현·재구성", ("표면 재구성", "surface reconstruction", "재구성", "reconstruction",
+                          "래디언스", "radiance field", "메싱", "mesh", "sdf")),
 ]
 
 

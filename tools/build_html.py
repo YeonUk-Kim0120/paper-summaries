@@ -86,6 +86,8 @@ def meta_of(html_text: str):
 CATEGORY_RULES = [
     ("6-DoF 포즈 추적", ("6dof pose", "6-dof pose", "6d pose", "pose tracking", "포즈 추적")),
     ("3DGS 압축·경량화", ("압축", "경량화", "memory reduction", "양자화", "quantization", "pruning", "가지치기")),
+    ("생성 3D prior·형상 완성", ("image-to-3d", "shape completion", "diffusion prior", "3d generation",
+                                  "생성", "generation", "score distillation", "sds", "completion")),
     ("장면 표현·재구성", ("표면 재구성", "surface reconstruction", "재구성", "reconstruction",
                           "래디언스", "radiance field", "메싱", "mesh", "sdf")),
 ]

@@ -90,6 +90,8 @@ CATEGORY_RULES = [
                                   "생성", "generation", "score distillation", "sds", "completion")),
     ("장면 표현·재구성", ("표면 재구성", "surface reconstruction", "재구성", "reconstruction",
                           "래디언스", "radiance field", "메싱", "mesh", "sdf")),
+    # 이 저장소의 주 관심사(포즈 추적·3DGS)와 별개 계열. 음성·텍스트 언어모델 논문용.
+    ("음성·언어 모델", ("speech", "음성", "asr", "tts", "언어모델", "llm", "hubert")),
 ]
 
 

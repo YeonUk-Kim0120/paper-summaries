@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논문 정리</title>
-<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 14편.">
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 15편.">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
       --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
@@ -56,13 +56,13 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 
 <header class="site">
   <h1>📚 논문 정리</h1>
-  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 14편 · 마지막 업데이트 2026-09-17</p>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 15편 · 마지막 업데이트 2026-09-18</p>
 </header>
 
 <div class="controls">
   <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
   <div class="row">
-    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">14</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">3</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">2</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">4</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">15</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">3</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">2</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">4</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
     <label class="sortwrap">정렬
       <select id="sort">
         <option value="date">정리 최신순</option>
@@ -75,6 +75,17 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 </div>
 
 <div class="grid" id="grid">
+    <article class="card" data-cat="음성·언어 모델" data-tags="speech-text LLM|음성 토큰|latent patch|자기회귀 언어모델|모달리티 정렬|HuBERT|ASR|TTS|스케일링"
+             data-title="LST: 음성 토큰을 패치로 묶어 텍스트와 눈높이 맞추기" data-year="2026"
+             data-date="2026-09-18" data-search="lst: 음성 토큰을 패치로 묶어 텍스트와 눈높이 맞추기 latent speech-text transformer 음성 토큰 시퀀스가 텍스트보다 훨씬 길어 생기는 모달리티 불균형을, 음성 토큰을 잠재 패치로 묶어 상위 자기회귀 단위로 삼아 해소한다. speech hellaswag 에서 절대 +6.5%(연산 통제) / +5.3%(데이터 통제). iclr 2026 음성·언어 모델 speech-text llm 음성 토큰 latent patch 자기회귀 언어모델 모달리티 정렬 hubert asr tts 스케일링">
+      <a class="card-main" href="latent_space_transformer.html">
+        <div class="card-title">LST: 음성 토큰을 패치로 묶어 텍스트와 눈높이 맞추기</div>
+        <div class="card-orig">Latent Speech-Text Transformer</div>
+        <div class="card-meta">ICLR · 2026 · 정리 2026-09-18</div>
+        <p class="card-desc">음성 토큰 시퀀스가 텍스트보다 훨씬 길어 생기는 모달리티 불균형을, 음성 토큰을 잠재 패치로 묶어 상위 자기회귀 단위로 삼아 해소한다. speech HellaSwag 에서 절대 +6.5%(연산 통제) / +5.3%(데이터 통제).</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="speech-text LLM">speech-text LLM</button><button class="tag" data-tag="음성 토큰">음성 토큰</button><button class="tag" data-tag="latent patch">latent patch</button><button class="tag" data-tag="자기회귀 언어모델">자기회귀 언어모델</button><button class="tag" data-tag="모달리티 정렬">모달리티 정렬</button><button class="tag" data-tag="HuBERT">HuBERT</button><button class="tag" data-tag="ASR">ASR</button><button class="tag" data-tag="TTS">TTS</button><button class="tag" data-tag="스케일링">스케일링</button></div>
+    </article>
     <article class="card" data-cat="생성 3D prior·형상 완성" data-tags="multi-view 3D reconstruction|3D generation|diffusion inversion|noise modulation|confidence-aware|VGGT|3DShape2VecSet|unposed images"
              data-title="ReconPlusGen: 재구성 사전정보를 초기 노이즈로 주입하는 3D 생성" data-year="2026"
              data-date="2026-09-17" data-search="reconplusgen: 재구성 사전정보를 초기 노이즈로 주입하는 3d 생성 reconplusgen: injecting reconstruction prior into multi-view 3d generation through noise inversion and modulation 포즈 없는 다시점 이미지에서 정준 공간 점군을 예측하고, 이를 노이즈 역변환으로 확산 모델의 초기 노이즈에 결정론적으로 심은 뒤 신뢰도에 따라 토큰별로 랜덤 노이즈와 보간(noise modulation)한다. dorabench 4-view 에서 cd 0.042 / f-score 0.966 으로 reconviagen(0.052/0.965)을 앞선다. arxiv (2609.11129) 2026 생성 3d prior·형상 완성 multi-view 3d reconstruction 3d generation diffusion inversion noise modulation confidence-aware vggt 3dshape2vecset unposed images">

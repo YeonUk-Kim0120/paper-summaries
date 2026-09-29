@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논문 정리</title>
-<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 20편.">
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 22편.">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
       --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
@@ -56,13 +56,13 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 
 <header class="site">
   <h1>📚 논문 정리</h1>
-  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 20편 · 마지막 업데이트 2026-09-29</p>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 22편 · 마지막 업데이트 2026-09-29</p>
 </header>
 
 <div class="controls">
   <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
   <div class="row">
-    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">20</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">9</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">3</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">2</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">22</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">10</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">4</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">2</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
     <label class="sortwrap">정렬
       <select id="sort">
         <option value="date">정리 최신순</option>
@@ -86,6 +86,17 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
       </a>
       <div class="tags"><button class="tag" data-tag="6D 포즈 추적">6D 포즈 추적</button><button class="tag" data-tag="재위치추정">재위치추정</button><button class="tag" data-tag="완전 가림 복구">완전 가림 복구</button><button class="tag" data-tag="템플릿 뱅크">템플릿 뱅크</button><button class="tag" data-tag="DINOv2">DINOv2</button><button class="tag" data-tag="VOS">VOS</button><button class="tag" data-tag="FoundationPose">FoundationPose</button><button class="tag" data-tag="RGB-D">RGB-D</button><button class="tag" data-tag="model-based">model-based</button><button class="tag" data-tag="training-free">training-free</button></div>
     </article>
+    <article class="card" data-cat="생성 3D prior·형상 완성" data-tags="6D 포즈 추정|model-free|zero-shot|image-to-3D|확산 사전정보|Wonder3D|MASt3R|스케일 복원|메시 온라인 갱신|FoundationPose|BundleSDF|RGB-D"
+             data-title="HIPPo: 생성 3D 사전정보로 CAD 없이 6D 포즈를, 그리고 관측으로 그 사전정보를 덮어쓰기" data-year="2025"
+             data-date="2026-09-29" data-search="hippo: 생성 3d 사전정보로 cad 없이 6d 포즈를, 그리고 관측으로 그 사전정보를 덮어쓰기 hippo: harnessing image-to-3d priors for model-free zero-shot 6d pose estimation 첫 프레임 한 장으로 wonder3d + 수정 mast3r 가 완결된 컬러 메시를 8초 만에 만들고(스케일까지 복원), 이후 시점이 크게 바뀔 때마다 확산 사전정보 점을 최근접 관측 점으로  arxiv 2502.10606 (ieee 서식 프리프린트, 로보틱스 계열) 2025 생성 3d prior·형상 완성 6d 포즈 추정 model-free zero-shot image-to-3d 확산 사전정보 wonder3d mast3r 스케일 복원 메시 온라인 갱신 foundationpose bundlesdf rgb-d">
+      <a class="card-main" href="hippo.html">
+        <div class="card-title">HIPPo: 생성 3D 사전정보로 CAD 없이 6D 포즈를, 그리고 관측으로 그 사전정보를 덮어쓰기</div>
+        <div class="card-orig">HIPPo: Harnessing Image-to-3D Priors for Model-free Zero-shot 6D Pose Estimation</div>
+        <div class="card-meta">arXiv 2502.10606 (IEEE 서식 프리프린트, 로보틱스 계열) · 2025 · 정리 2026-09-29</div>
+        <p class="card-desc">첫 프레임 한 장으로 Wonder3D + 수정 MASt3R 가 완결된 컬러 메시를 8초 만에 만들고(스케일까지 복원), 이후 시점이 크게 바뀔 때마다 확산 사전정보 점을 최근접 관측 점으로 </p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6D 포즈 추정">6D 포즈 추정</button><button class="tag" data-tag="model-free">model-free</button><button class="tag" data-tag="zero-shot">zero-shot</button><button class="tag" data-tag="image-to-3D">image-to-3D</button><button class="tag" data-tag="확산 사전정보">확산 사전정보</button><button class="tag" data-tag="Wonder3D">Wonder3D</button><button class="tag" data-tag="MASt3R">MASt3R</button><button class="tag" data-tag="스케일 복원">스케일 복원</button><button class="tag" data-tag="메시 온라인 갱신">메시 온라인 갱신</button><button class="tag" data-tag="FoundationPose">FoundationPose</button><button class="tag" data-tag="BundleSDF">BundleSDF</button><button class="tag" data-tag="RGB-D">RGB-D</button></div>
+    </article>
     <article class="card" data-cat="6-DoF 포즈 추적" data-tags="hand-object interaction|생성 3D prior|SAM3D|Sum-of-Gaussians|물체 포즈 추적|단안 비디오|HO3D|고속 최적화"
              data-title="GraG: 가우시안 합(SoG) 추적으로 손-물체 상호작용을 빠르게 복원" data-year="2026"
              data-date="2026-09-29" data-search="grag: 가우시안 합(sog) 추적으로 손-물체 상호작용을 빠르게 복원 grasp in gaussians: fast monocular reconstruction of dynamic hand–object interactions 단안 비디오에서 손-물체 상호작용을 복원한다. mv-sam3d 로 정준 물체를 한 번 만들어 형상을 고정하고, 조밀 가우시안을 2,000개 등방 sog 로 희소화해 이미지 sog 와의 닫힌 형식 겹침을 최대화하는 고전적 추적으로 포즈만 정제한다. hold 대비 38.9배 빠르면서 ho3dv3 cd 0.51cm, hot3d cd_h 9.37cm 로 sota. arxiv 2026 6-dof 포즈 추적 hand-object interaction 생성 3d prior sam3d sum-of-gaussians 물체 포즈 추적 단안 비디오 ho3d 고속 최적화">
@@ -107,6 +118,17 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
         <p class="card-desc">단안 RGB-D 영상에서 미지 물체의 6-DoF 추적과 3D 복원을 동시에 하되, 프레임마다 외형 복잡도(SIFT 밀도)와 기하 복잡도(평균 곡률)를 재서 트래커(TAP/LoFTR)와 3DGS render-and-compare 정제를 켜고 끄는 적응형 파이프라인. 축대칭 물체를 포함한 6객체 자체 벤치마크 GTR3D 를 공개하고, 합성에서 평균 CD 1.83 (BundleSDF 4.03, Gaussian-SLAM 48.83) 을 기록한다.</p>
       </a>
       <div class="tags"><button class="tag" data-tag="6-DoF 추적">6-DoF 추적</button><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="미지 물체 복원">미지 물체 복원</button><button class="tag" data-tag="RGB-D">RGB-D</button><button class="tag" data-tag="키프레임 선택">키프레임 선택</button><button class="tag" data-tag="축대칭 물체">축대칭 물체</button><button class="tag" data-tag="벤치마크">벤치마크</button></div>
+    </article>
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="SAM3D-Tracker|SAM 3D|guided diffusion|flow matching|손-물체 상호작용|물체 6-DoF 추적|생성 3D prior|리타게팅|단안 RGB|로봇 조작 데이터|DexYCB|HOI4D|OakInk2|HaWoR"
+             data-title="Do as I Do: 일상 영상 → 손 조작 데이터 (SAM3D-Tracker 원 논문)" data-year="2026"
+             data-date="2026-09-29" data-search="do as i do: 일상 영상 → 손 조작 데이터 (sam3d-tracker 원 논문) do as i do: dexterous manipulation data from everyday human videos 일상 단안 rgb 영상에서 손-물체 상호작용을 복원하고 다관절 로봇 손으로 리타게팅해 조작 데이터를 만드는 파이프라인. 물체 형상은 sam 3d 로 앵커 프레임에서 한 번 생성해 고정하고, 같은 sam 3d 의 flow matching ode 를 가이드해 프레임별 포즈만 갱신한다 — agentstar 가  arxiv preprint (2606.19333) 2026 6-dof 포즈 추적 sam3d-tracker sam 3d guided diffusion flow matching 손-물체 상호작용 물체 6-dof 추적 생성 3d prior 리타게팅 단안 rgb 로봇 조작 데이터 dexycb hoi4d oakink2 hawor">
+      <a class="card-main" href="doAsIDo.html">
+        <div class="card-title">Do as I Do: 일상 영상 → 손 조작 데이터 (SAM3D-Tracker 원 논문)</div>
+        <div class="card-orig">Do as I Do: Dexterous Manipulation Data from Everyday Human Videos</div>
+        <div class="card-meta">arXiv preprint (2606.19333) · 2026 · 정리 2026-09-29</div>
+        <p class="card-desc">일상 단안 RGB 영상에서 손-물체 상호작용을 복원하고 다관절 로봇 손으로 리타게팅해 조작 데이터를 만드는 파이프라인. 물체 형상은 SAM 3D 로 앵커 프레임에서 한 번 생성해 고정하고, 같은 SAM 3D 의 flow matching ODE 를 가이드해 프레임별 포즈만 갱신한다 — AgentSTAR 가 </p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="SAM3D-Tracker">SAM3D-Tracker</button><button class="tag" data-tag="SAM 3D">SAM 3D</button><button class="tag" data-tag="guided diffusion">guided diffusion</button><button class="tag" data-tag="flow matching">flow matching</button><button class="tag" data-tag="손-물체 상호작용">손-물체 상호작용</button><button class="tag" data-tag="물체 6-DoF 추적">물체 6-DoF 추적</button><button class="tag" data-tag="생성 3D prior">생성 3D prior</button><button class="tag" data-tag="리타게팅">리타게팅</button><button class="tag" data-tag="단안 RGB">단안 RGB</button><button class="tag" data-tag="로봇 조작 데이터">로봇 조작 데이터</button><button class="tag" data-tag="DexYCB">DexYCB</button><button class="tag" data-tag="HOI4D">HOI4D</button><button class="tag" data-tag="OakInk2">OakInk2</button><button class="tag" data-tag="HaWoR">HaWoR</button></div>
     </article>
     <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6-DoF 포즈 추적|추적 실패 검출|재위치추정|가림 복구|키프레임|SuperPoint|TEASER++|ICG+|RGB-D|model-based"
              data-title="Built-In Recovery: 실패를 스스로 감지하고 복구하는 6-DoF 추적기" data-year="2026"

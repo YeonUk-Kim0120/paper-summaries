@@ -39,4 +39,8 @@ Claude 가 push 까지 하려면 SSH 키 등록이 필요하다. 절차는 [`SET
 ## 규칙
 - 정리는 한국어. 용어는 한국어(영문) 병기. 숫자는 원문 그대로.
 - 그림/표는 `work/<slug>/figures/` 의 클립을 쓰고, 쓰기 전에 반드시 직접 보고 확인한다.
+- **`work/<slug>/text.md` 를 grep 할 때는 `-a` 를 반드시 붙인다.** 추출된 text.md 는 수식·기호 때문에
+  `file` 이 `data`(바이너리)로 판정하는 경우가 많고, 그러면 grep 이 매칭을 출력하지 않아
+  **"그 단어가 논문에 없다"는 잘못된 결론**이 난다. 실제로 그렇게 오판한 적이 있다
+  (doAsIDo 에서 "SAM3D" 를 0건으로 읽었으나 `-a` 로는 14건).
 - 의존성: Python 3 + `pymupdf` (`pip install --user pymupdf`).

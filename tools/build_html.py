@@ -84,7 +84,8 @@ def meta_of(html_text: str):
 # 위에서부터 순서대로 검사해 처음 걸리는 규칙을 쓴다. 좁은 규칙을 위에 둘 것
 # (예: 압축 논문도 "3D Gaussian Splatting" 태그를 갖고 있으므로, 넓은 "장면 표현·재구성"은 맨 아래).
 CATEGORY_RULES = [
-    ("6-DoF 포즈 추적", ("6dof pose", "6-dof pose", "6d pose", "pose tracking", "포즈 추적")),
+    # "6-DoF 추적"처럼 '포즈'가 빠진 표기도 잡도록 6dof/6-dof 자체를 키워드에 둔다.
+    ("6-DoF 포즈 추적", ("6dof", "6-dof", "6d pose", "pose tracking", "포즈 추적", "물체 추적")),
     ("3DGS 압축·경량화", ("압축", "경량화", "memory reduction", "양자화", "quantization", "pruning", "가지치기")),
     ("생성 3D prior·형상 완성", ("image-to-3d", "shape completion", "diffusion prior", "3d generation",
                                   "생성", "generation", "score distillation", "sds", "completion")),

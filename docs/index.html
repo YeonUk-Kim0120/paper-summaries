@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논문 정리</title>
-<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 22편.">
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 32편.">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
       --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
@@ -56,13 +56,13 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 
 <header class="site">
   <h1>📚 논문 정리</h1>
-  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 22편 · 마지막 업데이트 2026-09-29</p>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 32편 · 마지막 업데이트 2026-10-08</p>
 </header>
 
 <div class="controls">
   <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
   <div class="row">
-    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">22</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">10</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">4</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">2</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">32</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">13</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">8</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">5</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
     <label class="sortwrap">정렬
       <select id="sort">
         <option value="date">정리 최신순</option>
@@ -75,6 +75,116 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 </div>
 
 <div class="grid" id="grid">
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="카테고리 수준 6D 포즈 추정|대응 기반|형상 사전정보|NOCS|시드 트랜스포머|공동 최적화|error cascade|REAL275|HouseCat6D|RGB-D"
+             data-title="PriorPose: 변형과 정렬을 순서 없이 한꺼번에 푸는 카테고리 수준 포즈 추정" data-year="2026"
+             data-date="2026-10-08" data-search="priorpose: 변형과 정렬을 순서 없이 한꺼번에 푸는 카테고리 수준 포즈 추정 priorpose: reference-guided joint deformation and alignment for category-level object pose estimation 카테고리 평균 형상을 명시적 정준 참조로 두고, 변형(deformation)과 정렬(alignment)을 직렬로 나누지 않고 공유 특징 공간에서 동시에 푸는 단일 단계 대응 기반 프레임워크. real275 5°2cm 61.8 로 sota. arxiv 2026 6-dof 포즈 추적 카테고리 수준 6d 포즈 추정 대응 기반 형상 사전정보 nocs 시드 트랜스포머 공동 최적화 error cascade real275 housecat6d rgb-d">
+      <a class="card-main" href="priorPose.html">
+        <div class="card-title">PriorPose: 변형과 정렬을 순서 없이 한꺼번에 푸는 카테고리 수준 포즈 추정</div>
+        <div class="card-orig">PriorPose: Reference-Guided Joint Deformation and Alignment for Category-Level Object Pose Estimation</div>
+        <div class="card-meta">arXiv · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">카테고리 평균 형상을 명시적 정준 참조로 두고, 변형(deformation)과 정렬(alignment)을 직렬로 나누지 않고 공유 특징 공간에서 동시에 푸는 단일 단계 대응 기반 프레임워크. REAL275 5°2cm 61.8 로 SOTA.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="카테고리 수준 6D 포즈 추정">카테고리 수준 6D 포즈 추정</button><button class="tag" data-tag="대응 기반">대응 기반</button><button class="tag" data-tag="형상 사전정보">형상 사전정보</button><button class="tag" data-tag="NOCS">NOCS</button><button class="tag" data-tag="시드 트랜스포머">시드 트랜스포머</button><button class="tag" data-tag="공동 최적화">공동 최적화</button><button class="tag" data-tag="error cascade">error cascade</button><button class="tag" data-tag="REAL275">REAL275</button><button class="tag" data-tag="HouseCat6D">HouseCat6D</button><button class="tag" data-tag="RGB-D">RGB-D</button></div>
+    </article>
+    <article class="card" data-cat="생성 3D prior·형상 완성" data-tags="능동 재구성|next-best-view|keyframe selection|불확실성|information gain|SAM3D|Stream3D|생성 3D prior|evidence memory|cross-attention|GSO30|YCB-V|Replica|Chamfer distance"
+             data-title="Matisse: 증거 공간에서 추론하는 능동 3D 재구성" data-year="2026"
+             data-date="2026-10-08" data-search="matisse: 증거 공간에서 추론하는 능동 3d 재구성 matisse: evidence-space reasoning for active 3d reconstruction 사전학습 생성 3d 모델(sam3d)의 cross-attention 증거를 베이즈 사후분포로 재해석해 토큰별 evidential uncertainty 를 뽑고, 그로부터 evidential information gain 을 정의해 next-best-view 선택과 keyframe 선택을 하나의 기준으로 통합한 학습 불필요(training-free) 능동 재구성 프레임워크. gso30/ycb-v/replica 에서 cd 를 12.7%/3.8%/9.2% 줄이고, gso30 keyframe 실험에서 stream3d 입력 뷰의 14% 만으로 동등한 cd 에 도달한다. arxiv preprint 2026 생성 3d prior·형상 완성 능동 재구성 next-best-view keyframe selection 불확실성 information gain sam3d stream3d 생성 3d prior evidence memory cross-attention gso30 ycb-v replica chamfer distance">
+      <a class="card-main" href="matisse.html">
+        <div class="card-title">Matisse: 증거 공간에서 추론하는 능동 3D 재구성</div>
+        <div class="card-orig">Matisse: Evidence-Space Reasoning for Active 3D Reconstruction</div>
+        <div class="card-meta">arXiv preprint · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">사전학습 생성 3D 모델(SAM3D)의 cross-attention 증거를 베이즈 사후분포로 재해석해 토큰별 Evidential Uncertainty 를 뽑고, 그로부터 Evidential Information Gain 을 정의해 next-best-view 선택과 keyframe 선택을 하나의 기준으로 통합한 학습 불필요(training-free) 능동 재구성 프레임워크. GSO30/YCB-V/Replica 에서 CD 를 12.7%/3.8%/9.2% 줄이고, GSO30 keyframe 실험에서 Stream3D 입력 뷰의 14% 만으로 동등한 CD 에 도달한다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="능동 재구성">능동 재구성</button><button class="tag" data-tag="next-best-view">next-best-view</button><button class="tag" data-tag="keyframe selection">keyframe selection</button><button class="tag" data-tag="불확실성">불확실성</button><button class="tag" data-tag="information gain">information gain</button><button class="tag" data-tag="SAM3D">SAM3D</button><button class="tag" data-tag="Stream3D">Stream3D</button><button class="tag" data-tag="생성 3D prior">생성 3D prior</button><button class="tag" data-tag="evidence memory">evidence memory</button><button class="tag" data-tag="cross-attention">cross-attention</button><button class="tag" data-tag="GSO30">GSO30</button><button class="tag" data-tag="YCB-V">YCB-V</button><button class="tag" data-tag="Replica">Replica</button><button class="tag" data-tag="Chamfer distance">Chamfer distance</button></div>
+    </article>
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6-DoF 포즈 추적|prior-free|생성 3D prior|SAM3D|VGGT|대응 기반 정합|불확실성|베이지안 필터링|posterior-gated memory|HOT3D|YCBInEOAT|LINEMOD"
+             data-title="GRC-Pose: 생성 CAD 와 재구성 장면을 대응으로 잇는 prior-free 6D 추적" data-year="2026"
+             data-date="2026-10-08" data-search="grc-pose: 생성 cad 와 재구성 장면을 대응으로 잇는 prior-free 6d 추적 grc-pose: generation-reconstruction correspondence for prior-free 6d object pose tracking sam3d 가 만든 물체 cad 와 vggt-ω 가 만든 장면 재구성은 좌표계·스케일·완결성이 어긋나 그냥 붙일 수 없다. 이 불일치를  arxiv 2609.39116 (학회 미표기) 2026 6-dof 포즈 추적 6-dof 포즈 추적 prior-free 생성 3d prior sam3d vggt 대응 기반 정합 불확실성 베이지안 필터링 posterior-gated memory hot3d ycbineoat linemod">
+      <a class="card-main" href="grcPose.html">
+        <div class="card-title">GRC-Pose: 생성 CAD 와 재구성 장면을 대응으로 잇는 prior-free 6D 추적</div>
+        <div class="card-orig">GRC-Pose: Generation-Reconstruction Correspondence for Prior-Free 6D Object Pose Tracking</div>
+        <div class="card-meta">arXiv 2609.39116 (학회 미표기) · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">SAM3D 가 만든 물체 CAD 와 VGGT-Ω 가 만든 장면 재구성은 좌표계·스케일·완결성이 어긋나 그냥 붙일 수 없다. 이 불일치를 </p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6-DoF 포즈 추적">6-DoF 포즈 추적</button><button class="tag" data-tag="prior-free">prior-free</button><button class="tag" data-tag="생성 3D prior">생성 3D prior</button><button class="tag" data-tag="SAM3D">SAM3D</button><button class="tag" data-tag="VGGT">VGGT</button><button class="tag" data-tag="대응 기반 정합">대응 기반 정합</button><button class="tag" data-tag="불확실성">불확실성</button><button class="tag" data-tag="베이지안 필터링">베이지안 필터링</button><button class="tag" data-tag="posterior-gated memory">posterior-gated memory</button><button class="tag" data-tag="HOT3D">HOT3D</button><button class="tag" data-tag="YCBInEOAT">YCBInEOAT</button><button class="tag" data-tag="LINEMOD">LINEMOD</button></div>
+    </article>
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6D 포즈 추정|6D 포즈 추적|model-based|model-free|neural object field|렌더-앤-컴페어|합성 데이터|LLM 텍스처 증강|트랜스포머|대조 학습|RGB-D|미지 물체"
+             data-title="FoundationPose: 네 가지 과제를 하나로 묶은 6D 포즈 파운데이션 모델" data-year="2024"
+             data-date="2026-10-08" data-search="foundationpose: 네 가지 과제를 하나로 묶은 6d 포즈 파운데이션 모델 foundationpose: unified 6d pose estimation and tracking of novel objects cad 모델이 있든(model-based) 참조 이미지 ~16장만 있든(model-free), 포즈 추정이든 추적이든 — 네 과제를 같은 네트워크로 푸는 nvidia의 6d 포즈 파운데이션 모델. 가설 504개 생성 → 정제 → 계층적 랭킹 구조와, 1.2m 장 규모의 llm 보조 합성 데이터로 학습했다. 이 저장소의 거의 모든 포즈 논문이 참조하는 기준점. cvpr 2024 6-dof 포즈 추적 6d 포즈 추정 6d 포즈 추적 model-based model-free neural object field 렌더-앤-컴페어 합성 데이터 llm 텍스처 증강 트랜스포머 대조 학습 rgb-d 미지 물체">
+      <a class="card-main" href="foundationPose.html">
+        <div class="card-title">FoundationPose: 네 가지 과제를 하나로 묶은 6D 포즈 파운데이션 모델</div>
+        <div class="card-orig">FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects</div>
+        <div class="card-meta">CVPR · 2024 · 정리 2026-10-08</div>
+        <p class="card-desc">CAD 모델이 있든(model-based) 참조 이미지 ~16장만 있든(model-free), 포즈 추정이든 추적이든 — 네 과제를 같은 네트워크로 푸는 NVIDIA의 6D 포즈 파운데이션 모델. 가설 504개 생성 → 정제 → 계층적 랭킹 구조와, 1.2M 장 규모의 LLM 보조 합성 데이터로 학습했다. 이 저장소의 거의 모든 포즈 논문이 참조하는 기준점.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6D 포즈 추정">6D 포즈 추정</button><button class="tag" data-tag="6D 포즈 추적">6D 포즈 추적</button><button class="tag" data-tag="model-based">model-based</button><button class="tag" data-tag="model-free">model-free</button><button class="tag" data-tag="neural object field">neural object field</button><button class="tag" data-tag="렌더-앤-컴페어">렌더-앤-컴페어</button><button class="tag" data-tag="합성 데이터">합성 데이터</button><button class="tag" data-tag="LLM 텍스처 증강">LLM 텍스처 증강</button><button class="tag" data-tag="트랜스포머">트랜스포머</button><button class="tag" data-tag="대조 학습">대조 학습</button><button class="tag" data-tag="RGB-D">RGB-D</button><button class="tag" data-tag="미지 물체">미지 물체</button></div>
+    </article>
+    <article class="card" data-cat="장면 표현·재구성" data-tags="연속 매핑(continual mapping)|RGB-D SLAM|3D Gaussian Splatting|온라인 연산 예산 배분|뷰 스케줄링|적응형 감독 해상도|densification|CVQ|TUM RGB-D|ORB-SLAM3|gsplat|장면 재구성"
+             data-title="EliGSiR — 제한된 연산 안에서 연속 RGB-D 가우시안 매핑" data-year="2026"
+             data-date="2026-10-08" data-search="eligsir — 제한된 연산 안에서 연속 rgb-d 가우시안 매핑 eligsir: continual rgb-d mapping with gaussian splatting under bounded compute rgb-d 스트림이 들어오는 동안 제한된 연산 예산을  arxiv 2609.20348 (ieee 서식 프리프린트, 학회 미표기) 2026 장면 표현·재구성 연속 매핑(continual mapping) rgb-d slam 3d gaussian splatting 온라인 연산 예산 배분 뷰 스케줄링 적응형 감독 해상도 densification cvq tum rgb-d orb-slam3 gsplat 장면 재구성">
+      <a class="card-main" href="eligsir.html">
+        <div class="card-title">EliGSiR — 제한된 연산 안에서 연속 RGB-D 가우시안 매핑</div>
+        <div class="card-orig">EliGSiR: Continual RGB-D Mapping with Gaussian Splatting under Bounded Compute</div>
+        <div class="card-meta">arXiv 2609.20348 (IEEE 서식 프리프린트, 학회 미표기) · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">RGB-D 스트림이 들어오는 동안 제한된 연산 예산을 </p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="연속 매핑(continual mapping)">연속 매핑(continual mapping)</button><button class="tag" data-tag="RGB-D SLAM">RGB-D SLAM</button><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="온라인 연산 예산 배분">온라인 연산 예산 배분</button><button class="tag" data-tag="뷰 스케줄링">뷰 스케줄링</button><button class="tag" data-tag="적응형 감독 해상도">적응형 감독 해상도</button><button class="tag" data-tag="densification">densification</button><button class="tag" data-tag="CVQ">CVQ</button><button class="tag" data-tag="TUM RGB-D">TUM RGB-D</button><button class="tag" data-tag="ORB-SLAM3">ORB-SLAM3</button><button class="tag" data-tag="gsplat">gsplat</button><button class="tag" data-tag="장면 재구성">장면 재구성</button></div>
+    </article>
+    <article class="card" data-cat="생성 3D prior·형상 완성" data-tags="분해 재구성|3D-native prior|TRELLIS|flow matching|sparse voxel|spatial anchor|free-space|score distillation|spatial drift|Replica|ScanNet++"
+             data-title="DecomVoxel: 3D-native prior 를 제자리에서 디노이징해 장면을 분해 재구성" data-year="2026"
+             data-date="2026-10-08" data-search="decomvoxel: 3d-native prior 를 제자리에서 디노이징해 장면을 분해 재구성 decomvoxel: harnessing 3d-native priors with guided in-situ denoising optimization for decompositional scene reconstruction 가려진 물체의 완성을  siggraph asia 2026 (acm tog 45(6)) 2026 생성 3d prior·형상 완성 분해 재구성 3d-native prior trellis flow matching sparse voxel spatial anchor free-space score distillation spatial drift replica scannet++">
+      <a class="card-main" href="decomVoxel.html">
+        <div class="card-title">DecomVoxel: 3D-native prior 를 제자리에서 디노이징해 장면을 분해 재구성</div>
+        <div class="card-orig">DecomVoxel: Harnessing 3D-Native Priors with Guided In-situ Denoising Optimization for Decompositional Scene Reconstruction</div>
+        <div class="card-meta">SIGGRAPH Asia 2026 (ACM TOG 45(6)) · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">가려진 물체의 완성을 </p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="분해 재구성">분해 재구성</button><button class="tag" data-tag="3D-native prior">3D-native prior</button><button class="tag" data-tag="TRELLIS">TRELLIS</button><button class="tag" data-tag="flow matching">flow matching</button><button class="tag" data-tag="sparse voxel">sparse voxel</button><button class="tag" data-tag="spatial anchor">spatial anchor</button><button class="tag" data-tag="free-space">free-space</button><button class="tag" data-tag="score distillation">score distillation</button><button class="tag" data-tag="spatial drift">spatial drift</button><button class="tag" data-tag="Replica">Replica</button><button class="tag" data-tag="ScanNet++">ScanNet++</button></div>
+    </article>
+    <article class="card" data-cat="생성 3D prior·형상 완성" data-tags="장면 완성|물체 분해|생성 3D prior|RGB-D|flow matching|단일 시점 재구성|로봇 조작|TRELLIS"
+             data-title="CODA: 먼저 장면을 완성하고 나중에 물체로 쪼갠다" data-year="2026"
+             data-date="2026-10-08" data-search="coda: 먼저 장면을 완성하고 나중에 물체로 쪼갠다 coda: depth-aligned scene completion and object decomposition from a single rgb-d image 마스크 없는 rgb-d 한 장에서 장면 전체를 먼저 완성한 뒤 환경과 물체 메시로 분해한다. 생성 기하가 관측 깊이에서 이탈하는 drift 를 관측표면 초기화와 깊이 유도 특징 매칭 두 장치로 억제한다. arxiv (cs.ro) 2026 생성 3d prior·형상 완성 장면 완성 물체 분해 생성 3d prior rgb-d flow matching 단일 시점 재구성 로봇 조작 trellis">
+      <a class="card-main" href="coda.html">
+        <div class="card-title">CODA: 먼저 장면을 완성하고 나중에 물체로 쪼갠다</div>
+        <div class="card-orig">CODA: Depth-Aligned Scene Completion and Object Decomposition from a Single RGB-D Image</div>
+        <div class="card-meta">arXiv (cs.RO) · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">마스크 없는 RGB-D 한 장에서 장면 전체를 먼저 완성한 뒤 환경과 물체 메시로 분해한다. 생성 기하가 관측 깊이에서 이탈하는 drift 를 관측표면 초기화와 깊이 유도 특징 매칭 두 장치로 억제한다.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="장면 완성">장면 완성</button><button class="tag" data-tag="물체 분해">물체 분해</button><button class="tag" data-tag="생성 3D prior">생성 3D prior</button><button class="tag" data-tag="RGB-D">RGB-D</button><button class="tag" data-tag="flow matching">flow matching</button><button class="tag" data-tag="단일 시점 재구성">단일 시점 재구성</button><button class="tag" data-tag="로봇 조작">로봇 조작</button><button class="tag" data-tag="TRELLIS">TRELLIS</button></div>
+    </article>
+    <article class="card" data-cat="생성 3D prior·형상 완성" data-tags="sparse-view reconstruction|3D Gaussian Splatting|video diffusion|optical flow|flow distillation|Geometry Cheating|generative view completion|CogVideoX|DINOv2|WAFT|Mip-NeRF 360|Tanks and Temples|CO3D|DL3DV"
+             data-title="Bi-FlowGS: 광학 흐름으로 생성 복원과 가우시안 기하를 묶기" data-year="2026"
+             data-date="2026-10-08" data-search="bi-flowgs: 광학 흐름으로 생성 복원과 가우시안 기하를 묶기 bi-flowgs: bridging generative view completion and gaussian geometry through bidirectional flow co-refinement 희소 뷰 3dgs에서  arxiv preprint 2026 생성 3d prior·형상 완성 sparse-view reconstruction 3d gaussian splatting video diffusion optical flow flow distillation geometry cheating generative view completion cogvideox dinov2 waft mip-nerf 360 tanks and temples co3d dl3dv">
+      <a class="card-main" href="biFlowGS.html">
+        <div class="card-title">Bi-FlowGS: 광학 흐름으로 생성 복원과 가우시안 기하를 묶기</div>
+        <div class="card-orig">Bi-FlowGS: Bridging Generative View Completion and Gaussian Geometry through Bidirectional Flow Co-Refinement</div>
+        <div class="card-meta">arXiv preprint · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">희소 뷰 3DGS에서 </p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="sparse-view reconstruction">sparse-view reconstruction</button><button class="tag" data-tag="3D Gaussian Splatting">3D Gaussian Splatting</button><button class="tag" data-tag="video diffusion">video diffusion</button><button class="tag" data-tag="optical flow">optical flow</button><button class="tag" data-tag="flow distillation">flow distillation</button><button class="tag" data-tag="Geometry Cheating">Geometry Cheating</button><button class="tag" data-tag="generative view completion">generative view completion</button><button class="tag" data-tag="CogVideoX">CogVideoX</button><button class="tag" data-tag="DINOv2">DINOv2</button><button class="tag" data-tag="WAFT">WAFT</button><button class="tag" data-tag="Mip-NeRF 360">Mip-NeRF 360</button><button class="tag" data-tag="Tanks and Temples">Tanks and Temples</button><button class="tag" data-tag="CO3D">CO3D</button><button class="tag" data-tag="DL3DV">DL3DV</button></div>
+    </article>
+    <article class="card" data-cat="장면 표현·재구성" data-tags="feed-forward 3DGS|포즈 프리(pose-free)|신규 시점 합성|장면 재구성|VGGT|미분 가능 복셀화|의사 레이블 지식 증류|3D 파운데이션 모델"
+             data-title="AnySplat: 포즈 없이 3장이든 200장이든 한 번에 3D 가우시안" data-year="2025"
+             data-date="2026-10-08" data-search="anysplat: 포즈 없이 3장이든 200장이든 한 번에 3d 가우시안 anysplat: feed-forward 3d gaussian splatting from unconstrained views 보정되지 않은(uncalibrated·unposed) 이미지 3~200장을 한 번의 순전파로 3d 가우시안 + 카메라 내부/외부 파라미터로 바꾼다. vggt 백본에 가우시안·깊이·카메라 헤드를 붙이고, 미분 가능 복셀화로 뷰 수가 늘어도 가우시안 수를 포화시키며(200뷰에서 약 40m→11m), vggt 의사 레이블 증류만으로 3d 정답 없이 학습한다. mip-nerf360 16뷰 psnr 21.85 를 0.767초에, 64뷰를 4.1초에 재구성(3d-gs 는 10분). acm tog 44(6) (siggraph asia 2025) 2025 장면 표현·재구성 feed-forward 3dgs 포즈 프리(pose-free) 신규 시점 합성 장면 재구성 vggt 미분 가능 복셀화 의사 레이블 지식 증류 3d 파운데이션 모델">
+      <a class="card-main" href="anysplat.html">
+        <div class="card-title">AnySplat: 포즈 없이 3장이든 200장이든 한 번에 3D 가우시안</div>
+        <div class="card-orig">AnySplat: Feed-forward 3D Gaussian Splatting from Unconstrained Views</div>
+        <div class="card-meta">ACM TOG 44(6) (SIGGRAPH Asia 2025) · 2025 · 정리 2026-10-08</div>
+        <p class="card-desc">보정되지 않은(uncalibrated·unposed) 이미지 3~200장을 한 번의 순전파로 3D 가우시안 + 카메라 내부/외부 파라미터로 바꾼다. VGGT 백본에 가우시안·깊이·카메라 헤드를 붙이고, 미분 가능 복셀화로 뷰 수가 늘어도 가우시안 수를 포화시키며(200뷰에서 약 40M→11M), VGGT 의사 레이블 증류만으로 3D 정답 없이 학습한다. Mip-NeRF360 16뷰 PSNR 21.85 를 0.767초에, 64뷰를 4.1초에 재구성(3D-GS 는 10분).</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="feed-forward 3DGS">feed-forward 3DGS</button><button class="tag" data-tag="포즈 프리(pose-free)">포즈 프리(pose-free)</button><button class="tag" data-tag="신규 시점 합성">신규 시점 합성</button><button class="tag" data-tag="장면 재구성">장면 재구성</button><button class="tag" data-tag="VGGT">VGGT</button><button class="tag" data-tag="미분 가능 복셀화">미분 가능 복셀화</button><button class="tag" data-tag="의사 레이블 지식 증류">의사 레이블 지식 증류</button><button class="tag" data-tag="3D 파운데이션 모델">3D 파운데이션 모델</button></div>
+    </article>
+    <article class="card" data-cat="장면 표현·재구성" data-tags="active reconstruction|next-best-view|2D Gaussian Splatting|mutual information|Bayesian reliability|RGB-D|Replica|장면 재구성"
+             data-title="2D GauSS-MI — 2DGS 위의 능동 장면 재구성" data-year="2026"
+             data-date="2026-10-08" data-search="2d gauss-mi — 2dgs 위의 능동 장면 재구성 2d gauss-mi: efficient active scene reconstruction with balanced visual and geometric quality 2dgs 위에 올린 첫 능동 장면 재구성 시스템. 2d gaussian 하나하나에 법선 기준 front/back 양면 베이즈 신뢰도를 붙이고, 그 신뢰도로 shannon 상호정보량(2d gauss-mi)을 계산해 next-best-view 를 고른다. replica 8장면에서 psnr 36.87 / d-l1 0.25cm / f-score 0.970 을 후보 뷰 1개당 1.01 ms (990.6 fps) 로 달성. arxiv (icra 투고 추정) 2026 장면 표현·재구성 active reconstruction next-best-view 2d gaussian splatting mutual information bayesian reliability rgb-d replica 장면 재구성">
+      <a class="card-main" href="gaussmi.html">
+        <div class="card-title">2D GauSS-MI — 2DGS 위의 능동 장면 재구성</div>
+        <div class="card-orig">2D GauSS-MI: Efficient Active Scene Reconstruction with Balanced Visual and Geometric Quality</div>
+        <div class="card-meta">arXiv (ICRA 투고 추정) · 2026 · 정리 2026-10-08</div>
+        <p class="card-desc">2DGS 위에 올린 첫 능동 장면 재구성 시스템. 2D Gaussian 하나하나에 법선 기준 front/back 양면 베이즈 신뢰도를 붙이고, 그 신뢰도로 Shannon 상호정보량(2D GauSS-MI)을 계산해 next-best-view 를 고른다. Replica 8장면에서 PSNR 36.87 / D-L1 0.25cm / F-score 0.970 을 후보 뷰 1개당 1.01 ms (990.6 fps) 로 달성.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="active reconstruction">active reconstruction</button><button class="tag" data-tag="next-best-view">next-best-view</button><button class="tag" data-tag="2D Gaussian Splatting">2D Gaussian Splatting</button><button class="tag" data-tag="mutual information">mutual information</button><button class="tag" data-tag="Bayesian reliability">Bayesian reliability</button><button class="tag" data-tag="RGB-D">RGB-D</button><button class="tag" data-tag="Replica">Replica</button><button class="tag" data-tag="장면 재구성">장면 재구성</button></div>
+    </article>
     <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6D 포즈 추적|재위치추정|완전 가림 복구|템플릿 뱅크|DINOv2|VOS|FoundationPose|RGB-D|model-based|training-free"
              data-title="RRTrack: 이중 뱅크 템플릿 매칭으로 사라진 물체를 다시 잡는 6D 추적기" data-year="2026"
              data-date="2026-09-29" data-search="rrtrack: 이중 뱅크 템플릿 매칭으로 사라진 물체를 다시 잡는 6d 추적기 rrtrack: robust and recoverable object 6d pose tracking for dynamic scenes 메모리 기반 vos(cutie)와 동결 foundationpose 정제기를 렌더 마스크 일치도로 닫아 놓고, 물체를 놓치면 dinov2 cls 토큰으로 오프라인 합성 템플릿 뱅크와 온라인 관측 앵커 뱅크에서 각각 top-3 포즈 가설을 검색해 복구한다. 자체 isaac sim 합성 벤치마크(3 시나리오, 22 영상, 72 소실–재등장 이벤트)에서 foundationpose 대비 add-s ar 66.3% 향상, 55.2 fps. arxiv (ieee 저널 형식 프리프린트) 2026 6-dof 포즈 추적 6d 포즈 추적 재위치추정 완전 가림 복구 템플릿 뱅크 dinov2 vos foundationpose rgb-d model-based training-free">

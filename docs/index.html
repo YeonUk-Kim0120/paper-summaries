@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>논문 정리</title>
-<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 32편.">
+<meta name="description" content="읽은 논문을 한국어로 정리해 모아둔 곳. 33편.">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--fg:#1f2328;--muted:#656d76;--line:#e5e7eb;--accent:#2563eb;
       --accent-soft:#eaf0ff;--tagbg:#eef2ff;--tagfg:#3730a3;--field:#fff;--shadow:rgba(0,0,0,.08)}
@@ -56,13 +56,13 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 
 <header class="site">
   <h1>📚 논문 정리</h1>
-  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 32편 · 마지막 업데이트 2026-10-08</p>
+  <p class="sub">읽은 논문을 한국어로 정리해 모아둔 곳 · 33편 · 마지막 업데이트 2026-10-13</p>
 </header>
 
 <div class="controls">
   <input id="q" type="search" placeholder="제목 · 원제 · 태그 · 요약에서 검색" autocomplete="off" spellcheck="false">
   <div class="row">
-    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">32</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">13</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">8</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">5</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
+    <div class="cats" id="cats"><button class="chip on" data-cat="">전체 <span class="n">33</span></button><button class="chip" data-cat="6-DoF 포즈 추적">6-DoF 포즈 추적 <span class="n">14</span></button><button class="chip" data-cat="생성 3D prior·형상 완성">생성 3D prior·형상 완성 <span class="n">8</span></button><button class="chip" data-cat="장면 표현·재구성">장면 표현·재구성 <span class="n">5</span></button><button class="chip" data-cat="음성·언어 모델">음성·언어 모델 <span class="n">1</span></button><button class="chip" data-cat="3DGS 압축·경량화">3DGS 압축·경량화 <span class="n">5</span></button></div>
     <label class="sortwrap">정렬
       <select id="sort">
         <option value="date">정리 최신순</option>
@@ -75,6 +75,17 @@ footer.site{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);co
 </div>
 
 <div class="grid" id="grid">
+    <article class="card" data-cat="6-DoF 포즈 추적" data-tags="6-DoF 포즈 추적|포즈 그래프 최적화|불확실성|iSAM2|특징 매칭|실시간"
+             data-title="재구성 없이 포즈 그래프만으로 추적하기" data-year="2026"
+             data-date="2026-10-13" data-search="재구성 없이 포즈 그래프만으로 추적하기 fast pose tracking of rigid objects with compact pose graph optimization 대응점을 전역 최적화에 남기지 않고 상대 포즈 하나로 압축해 se(3) 포즈 그래프만 푼다. 3d 재구성 없이 bundlesdf 수준 정확도를 5.5~7배 빠르게 달성. arxiv preprint 2026 6-dof 포즈 추적 6-dof 포즈 추적 포즈 그래프 최적화 불확실성 isam2 특징 매칭 실시간">
+      <a class="card-main" href="compactPGO.html">
+        <div class="card-title">재구성 없이 포즈 그래프만으로 추적하기</div>
+        <div class="card-orig">Fast Pose Tracking of Rigid Objects with Compact Pose Graph Optimization</div>
+        <div class="card-meta">arXiv preprint · 2026 · 정리 2026-10-13</div>
+        <p class="card-desc">대응점을 전역 최적화에 남기지 않고 상대 포즈 하나로 압축해 SE(3) 포즈 그래프만 푼다. 3D 재구성 없이 BundleSDF 수준 정확도를 5.5~7배 빠르게 달성.</p>
+      </a>
+      <div class="tags"><button class="tag" data-tag="6-DoF 포즈 추적">6-DoF 포즈 추적</button><button class="tag" data-tag="포즈 그래프 최적화">포즈 그래프 최적화</button><button class="tag" data-tag="불확실성">불확실성</button><button class="tag" data-tag="iSAM2">iSAM2</button><button class="tag" data-tag="특징 매칭">특징 매칭</button><button class="tag" data-tag="실시간">실시간</button></div>
+    </article>
     <article class="card" data-cat="6-DoF 포즈 추적" data-tags="카테고리 수준 6D 포즈 추정|대응 기반|형상 사전정보|NOCS|시드 트랜스포머|공동 최적화|error cascade|REAL275|HouseCat6D|RGB-D"
              data-title="PriorPose: 변형과 정렬을 순서 없이 한꺼번에 푸는 카테고리 수준 포즈 추정" data-year="2026"
              data-date="2026-10-08" data-search="priorpose: 변형과 정렬을 순서 없이 한꺼번에 푸는 카테고리 수준 포즈 추정 priorpose: reference-guided joint deformation and alignment for category-level object pose estimation 카테고리 평균 형상을 명시적 정준 참조로 두고, 변형(deformation)과 정렬(alignment)을 직렬로 나누지 않고 공유 특징 공간에서 동시에 푸는 단일 단계 대응 기반 프레임워크. real275 5°2cm 61.8 로 sota. arxiv 2026 6-dof 포즈 추적 카테고리 수준 6d 포즈 추정 대응 기반 형상 사전정보 nocs 시드 트랜스포머 공동 최적화 error cascade real275 housecat6d rgb-d">
